@@ -1,0 +1,313 @@
+@use 'webfont' as *;
+@use 'colors' as *;
+@use 'type-scale' as *;
+@use 'mixins' as *;
+@use 'media-query' as *;
+@use 'reset' as *;
+
+:root {
+    @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+        --clr-#{$color}-#{$shade}: #{$value};
+    }
+    }
+
+    @each $screen-size, $font-size in $type-scale {
+        @if $screen-size == small {
+            @each $size, $value in $font-size {
+                --fs-#{$size}: #{$value};
+            }
+        }
+        @else {
+            @include mq(small) {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+    }
+}
+
+$myColor: hsl(210, 10%, 33%);
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Bai Jamjuree", sans-serif;
+    line-height: normal;
+    overflow-x: hidden;
+    @include column-flexed;
+    h1  {
+        font-size: var(--fs-500);
+        font-weight: 600;
+        color: var(--clr-neutral-100);
+        line-height: 1;
+        padding-bottom: 14px;
+    }
+    p {
+        font-size: var(--fs-400);
+        font-weight: 400;
+        color: var(--clr-neutral-200); 
+    }
+}
+  
+header {
+  width: 100%;
+    text-align: center;
+    .container {
+      min-height: 250px;
+      max-width: 100%;
+      position: relative;
+      @include column-flexed;
+      .content  {
+        position: absolute;
+        width: 100%;
+        bottom: 2%;
+        .text {
+         @include div-text;
+         @include mq (small) {
+          @include div-text($padding: 4em 22%);
+         }
+        }
+        span {
+          @include column-flexed;
+          gap: 1em;
+          .btn1 {
+             @include download-button;
+             background-color: var(--clr-primary-100);
+          }
+          .btn2 {
+             @include download-button;
+             background-color: var(--clr-primary-200);
+          }
+          @include mq (small) {
+             @include flex-box;
+             justify-content: center;
+             gap: 2em;
+          }
+        } 
+      }
+    }
+}
+  
+.desktop {
+    .text {
+        @include div-text;
+        @include mq (small) {
+          @include div-text($padding: 4em 18%);
+        }
+    }
+    span {
+        @include column-flexed;
+        padding-block: 4em;
+        img {
+            height: auto;
+            width: 80%;
+        }
+        .features {
+            .text {
+                text-align: center;
+                padding-bottom: 2%;
+            }
+        }
+        @include mq (small) {
+            @include flex-box;
+            height: 35em;
+            max-width: 78%;
+            gap: 10%;
+            .features {
+               .text {
+                    text-align: start;
+                    padding: 0;
+                }
+            }
+            img {
+                height: 100%;
+                max-width: 50%;
+                margin-left: -5%;
+              }
+        }
+        
+    }
+  
+}
+
+.mobile {
+    .text {
+      @include div-text;
+    }
+    @include column-flexed;
+    img {
+        width: 100%;
+        padding-top: 2em;
+      }
+      @include mq (small) {
+        .text {
+          @include div-text($padding: 4em 18%);
+        }
+      }
+  }
+  
+  .tools {
+    .text {
+        @include div-text;
+    }
+    .icons {
+        @include column-flexed;
+        span {
+            @include div-text;
+            img {
+              padding-bottom: 2em;
+            } 
+        }
+    }
+    @include mq (small) {
+        .icons {
+            @include flex-box;
+            justify-content: center;
+            width: 100%;
+            span {
+              height: auto;
+              width: 29%;
+              h1 {
+                  font-size: var(--fs-400);
+                  padding-top: 2%;
+              }
+              p {
+                font-size: var(--fs-300);
+              }
+            }
+        }
+    }
+  }
+  
+  .logos {
+    @include column-flexed;
+    gap: 4em;
+    padding-block: 4em;
+    @include mq (small) {
+      @include flex-box;
+      justify-content: center;
+      width: 100%;
+      gap: 8%;
+      img {
+        height: auto;
+        max-width: 10%;
+      }
+    }
+    
+  }
+  
+  section {
+    min-height: 200px;
+    width: 100%;
+    .text {
+        @include div-text;
+        @include mq (small) {
+          @include div-text($padding: 4em 22%);
+        }
+    }
+    span {
+      @include column-flexed;
+      padding-bottom: 6em;
+      gap: 1em;
+      .btn1 {
+         @include download-button;
+         background-color: var(--clr-primary-100);
+      }
+      .btn2 {
+         @include download-button;
+         background-color: var(--clr-primary-200);
+      }
+      @include mq (small) {
+         @include flex-box;
+         justify-content: center;
+         gap: 2em;
+      }
+    }
+    
+  }
+ 
+  footer {
+    height: 100vh;
+    width: 100%;
+    padding-block: 2em;
+    text-align: center;
+    background-color: lighten($myColor, 65%);
+    text-align: center;
+    .block {
+      @include column-flexed;
+      gap: 4em;
+      nav {
+        gap: 1em;
+        img {
+          height: 70px;
+        }
+        ul {
+          li {
+            font-size: var(--fs-400);
+            color: var(--clr-neutral-100);
+            list-style: none;
+            padding-block: 1em;
+          }
+        }
+      }
+    }
+    span {
+      padding-bottom: 1em;
+      a {
+        padding-left: 1em;
+        i {
+          &:focus,
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    p {
+      img {
+        height: 40px;
+        vertical-align: middle;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: var(--clr-neutral-200);
+      &:hover {
+        color: dodgerblue;
+      }
+    }
+    @include mq (small) {
+      height: 11em;
+      .block {
+        @include flex-box;
+        justify-content: space-around;
+        gap: 5%;
+        nav {
+          @include flex-box;
+          max-width: 500px;
+          gap: 5%;
+          ul {
+            height: 5em;
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows: 35px 35px;
+            grid-auto-flow: column;
+            column-gap: 1em;
+            text-align: start;
+            li {
+              padding-top: 0;
+            } 
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  
+
