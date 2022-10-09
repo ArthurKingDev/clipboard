@@ -1,0 +1,405 @@
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/baijamjuree/v11/LDI1apSCOBt_aeQQ7ftydoa8XsLL.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Bai Jamjuree";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/baijamjuree/v11/LDIqapSCOBt_aeQQ7ftydoa0gebelJo0.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+:root {
+  --clr-primary-100: hsl(171deg, 66%, 44%);
+  --clr-primary-200: hsl(233deg, 100%, 69%);
+  --clr-neutral-100: hsl(210deg, 10%, 33%);
+  --clr-neutral-200: hsl(201deg, 11%, 66%);
+  --fs-300: 0.875rem;
+  --fs-400: 1.125rem;
+  --fs-500: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --fs-300: 0.875rem;
+    --fs-400: 1.4375rem;
+    --fs-500: 2.5rem;
+  }
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: normal;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+body h1 {
+  font-size: var(--fs-500);
+  font-weight: 600;
+  color: var(--clr-neutral-100);
+  line-height: 1;
+  padding-bottom: 14px;
+}
+body p {
+  font-size: var(--fs-400);
+  font-weight: 400;
+  color: var(--clr-neutral-200);
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+header .container {
+  min-height: 250px;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+header .container .content {
+  position: absolute;
+  width: 100%;
+  bottom: 2%;
+}
+header .container .content .text {
+  text-align: center;
+  padding: 4em 4%;
+}
+@media only screen and (min-width: 768px) {
+  header .container .content .text {
+    text-align: center;
+    padding: 4em 22%;
+  }
+}
+header .container .content span {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1em;
+}
+header .container .content span .btn1 {
+  color: white;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: var(--fs-400);
+  border: 4px solid;
+  cursor: pointer;
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
+  background-color: var(--clr-primary-100);
+}
+header .container .content span .btn2 {
+  color: white;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: var(--fs-400);
+  border: 4px solid;
+  cursor: pointer;
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
+  background-color: var(--clr-primary-200);
+}
+@media only screen and (min-width: 768px) {
+  header .container .content span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
+}
+
+.desktop .text {
+  text-align: center;
+  padding: 4em 4%;
+}
+@media only screen and (min-width: 768px) {
+  .desktop .text {
+    text-align: center;
+    padding: 4em 18%;
+  }
+}
+.desktop span {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding-block: 4em;
+}
+.desktop span img {
+  height: auto;
+  width: 80%;
+}
+.desktop span .features .text {
+  text-align: center;
+  padding-bottom: 2%;
+}
+@media only screen and (min-width: 768px) {
+  .desktop span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35em;
+    max-width: 78%;
+    gap: 10%;
+  }
+  .desktop span .features .text {
+    text-align: start;
+    padding: 0;
+  }
+  .desktop span img {
+    height: 100%;
+    max-width: 50%;
+    margin-left: -5%;
+  }
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.mobile .text {
+  text-align: center;
+  padding: 4em 4%;
+}
+.mobile img {
+  width: 100%;
+  padding-top: 2em;
+}
+@media only screen and (min-width: 768px) {
+  .mobile .text {
+    text-align: center;
+    padding: 4em 18%;
+  }
+}
+
+.tools .text {
+  text-align: center;
+  padding: 4em 4%;
+}
+.tools .icons {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.tools .icons span {
+  text-align: center;
+  padding: 4em 4%;
+}
+.tools .icons span img {
+  padding-bottom: 2em;
+}
+@media only screen and (min-width: 768px) {
+  .tools .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .tools .icons span {
+    height: auto;
+    width: 29%;
+  }
+  .tools .icons span h1 {
+    font-size: var(--fs-400);
+    padding-top: 2%;
+  }
+  .tools .icons span p {
+    font-size: var(--fs-300);
+  }
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 4em;
+  padding-block: 4em;
+}
+@media only screen and (min-width: 768px) {
+  .logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8%;
+  }
+  .logos img {
+    height: auto;
+    max-width: 10%;
+  }
+}
+
+section {
+  min-height: 200px;
+  width: 100%;
+}
+section .text {
+  text-align: center;
+  padding: 4em 4%;
+}
+@media only screen and (min-width: 768px) {
+  section .text {
+    text-align: center;
+    padding: 4em 22%;
+  }
+}
+section span {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding-bottom: 6em;
+  gap: 1em;
+}
+section span .btn1 {
+  color: white;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: var(--fs-400);
+  border: 4px solid;
+  cursor: pointer;
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
+  background-color: var(--clr-primary-100);
+}
+section span .btn2 {
+  color: white;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: var(--fs-400);
+  border: 4px solid;
+  cursor: pointer;
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
+  background-color: var(--clr-primary-200);
+}
+@media only screen and (min-width: 768px) {
+  section span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
+}
+
+footer {
+  height: 100vh;
+  width: 100%;
+  padding-block: 2em;
+  text-align: center;
+  background-color: #f9fafa;
+  text-align: center;
+}
+footer .block {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 4em;
+}
+footer .block nav {
+  gap: 1em;
+}
+footer .block nav img {
+  height: 70px;
+}
+footer .block nav ul li {
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-100);
+  list-style: none;
+  padding-block: 1em;
+}
+footer span {
+  padding-bottom: 1em;
+}
+footer span a {
+  padding-left: 1em;
+}
+footer span a i:focus, footer span a i:hover {
+  transform: scale(1.05);
+}
+footer p img {
+  height: 40px;
+  vertical-align: middle;
+}
+footer a {
+  text-decoration: none;
+  color: var(--clr-neutral-200);
+}
+footer a:hover {
+  color: dodgerblue;
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    height: 11em;
+  }
+  footer .block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5%;
+  }
+  footer .block nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 500px;
+    gap: 5%;
+  }
+  footer .block nav ul {
+    height: 5em;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 35px 35px;
+    grid-auto-flow: column;
+    column-gap: 1em;
+    text-align: start;
+  }
+  footer .block nav ul li {
+    padding-top: 0;
+  }
+}
